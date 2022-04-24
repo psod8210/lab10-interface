@@ -1,6 +1,7 @@
 public interface Measurable
 {
    double getMeasurement();
+   int compareTo(Country c);
 
    /**
       Computes the average of the measures of the given objects.
@@ -31,7 +32,23 @@ public interface Measurable
    */
    public static Measurable max(Measurable[] objects)
    {
-		// WRITE CODE HERE
-      return null;
+       Measurable answer = null;
+       double value = 0;
+       for (Measurable ans : objects)
+       {
+           double value1 = ans.getMeasurement();
+           if(value1 > value)
+           {
+               answer = ans;
+               value = value1;
+           }
+       }
+       if(objects.length < 0) {
+           return null;
+       }
+       else
+       {
+           return answer;
+       }
    }
 }

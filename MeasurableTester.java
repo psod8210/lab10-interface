@@ -11,10 +11,13 @@ public class MeasurableTester
       countries[1] = new Country("Thailand", 513120);
       countries[2] = new Country("Belgium", 30510);
 
-      //Measurable maxCountry = Measurable.max(countries);
-      //System.out.println("Maximum area: " + maxCountry.getMeasurement());
-      //System.out.println("Expected: 513120");
-      System.out.println("The average surface area of these countries are: "+Measurable.average(countries));
+      Measurable maxCountry = Measurable.max(countries);
+      System.out.println("Maximum area: " + maxCountry.getMeasurement());
+      System.out.println("Expected: 513120");
+      System.out.println("The average surface area of these countries are: "+ Measurable.average(countries));
+      
+      System.out.println(countries[0].compareTo((Country) countries[1]));
+      System.out.println("Should be -1");
 
    }
 }
